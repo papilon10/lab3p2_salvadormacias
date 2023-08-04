@@ -17,6 +17,73 @@ public class vehiculo {
     String modelo;
     String tipo;
     Color color;
-    Date yaer;
+    Date year;
+    
+    vehiculo(){
+    }
+
+    public vehiculo(int numero_placa, String marca, String modelo, String tipo, Color color, Date year) {
+        this.numero_placa = numero_placa;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.tipo = tipo;
+        this.color = color;
+        this.year = year;
+    }
+
+    public int getNumero_placa() {
+        return numero_placa;
+    }
+
+    public void setNumero_placa(int numero_placa) {
+        this.numero_placa = numero_placa;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    public Date getYear() {
+        return year;
+    }
+
+    public void setYear(Date year) {
+        this.year = year;
+    }
+
+    @Override
+    public String toString() {
+        return "vehiculo{" + "numero_placa=" + numero_placa + ", marca=" + marca + ", modelo=" + modelo + ", tipo=" + tipo + ", color=" + color + ", year=" + year + '}';
+    }
+    
+    
     
 }
