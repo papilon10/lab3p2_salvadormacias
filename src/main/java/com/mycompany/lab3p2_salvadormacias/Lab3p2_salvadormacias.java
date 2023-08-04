@@ -118,6 +118,40 @@ public class Lab3p2_salvadormacias {
             } else if (opcion == 5) {
 
             } else if (opcion == 6) {
+                System.out.println("---Automoviles---");
+                for (Object y : vehiculos) {
+                    if (y instanceof automovil) {
+                        vehiculo carro = (vehiculo) y;
+                        System.out.println(carro);
+                    }
+                    System.out.println(vehiculos.indexOf(y)
+                            + "-" + y);
+                    System.out.println("\n");
+
+                }
+                System.out.println("---Motocicletas---");
+                for (Object y : vehiculos) {
+                    if (y instanceof motocicleta) {
+                        vehiculo moto = (vehiculo) y;
+                        System.out.println(moto);
+                    }
+                    System.out.println(vehiculos.indexOf(y)
+                            + "-" + y);
+                    System.out.println("\n");
+
+                }
+                System.out.println("---Autobuses---");
+                for (Object y : vehiculos) {
+                    if (y instanceof autobus) {
+                        vehiculo bus = (vehiculo) y;
+                        System.out.println(bus);
+                    }
+                    System.out.println(vehiculos.indexOf(y)
+                            + "-" + y);
+                    System.out.println("\n");
+
+                }
+                
 
             } else if (opcion == 7) {
 
