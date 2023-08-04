@@ -20,9 +20,9 @@ public class Lab3p2_salvadormacias {
 
     public static Scanner lea = new Scanner(System.in);
     public static Scanner str = new Scanner(System.in);
+    public static ArrayList<vehiculo> vehiculos = new ArrayList();
 
     public static void main(String[] args) {
-        ArrayList<vehiculo> vehiculos = new ArrayList();
         int opcion = 0;
         while (opcion != 8) {
             System.out.println("---Bienvenido al sitema de registro---\n");
@@ -116,6 +116,23 @@ public class Lab3p2_salvadormacias {
             } else if (opcion == 4) {
 
             } else if (opcion == 5) {
+                listarvehiculos();
+                listarvehiculos2();
+                listarvehiculos3();
+                if (vehiculos.size() > 0) {
+                    System.out.println("Ingrese la posicion del vehiculo a eliminar");
+                    int remove = lea.nextInt();
+                    System.out.println("Confirme la eliminacion del vehiculo[s/n]");
+                    String confirmacion = str.nextLine();
+                    if (confirmacion.contentEquals("s") || confirmacion.contentEquals("S")) {
+                        vehiculos.remove(remove);
+
+                    }
+
+                } else {
+
+                    System.out.println("el inventario de vehiculos esta vacio, no se pueden eliminar vehiculos");
+                }
 
             } else if (opcion == 6) {
                 System.out.println("---Automoviles---");
@@ -151,4 +168,37 @@ public class Lab3p2_salvadormacias {
         }//fin while
 
     }//fin main
+
+    public static void listarvehiculos() {
+        for (int i = 0; i < vehiculos.size(); i++) {
+            if (vehiculos.get(i) instanceof automovil) {
+                System.out.println(i + "." + (vehiculo) vehiculos.get(i));
+            }
+            System.out.println("\n\n");
+
+        }
+    }
+
+    public static void listarvehiculos2() {
+        for (int i = 0; i < vehiculos.size(); i++) {
+            if (vehiculos.get(i) instanceof motocicleta) {
+                System.out.println(i + "." + (vehiculo) vehiculos.get(i));
+            }
+            System.out.println("\n\n");
+
+        }
+
+    }
+
+    public static void listarvehiculos3() {
+        for (int i = 0; i < vehiculos.size(); i++) {
+            if (vehiculos.get(i) instanceof autobus) {
+                System.out.println(i + "." + (vehiculo) vehiculos.get(i));
+            }
+            System.out.println("\n\n");
+
+        }
+
+    }
+
 }//fin clase
