@@ -12,14 +12,15 @@ import java.util.Date;
  * @author papilon10
  */
 public class vehiculo {
+
     int numero_placa;
     String marca;
     String modelo;
     String tipo;
     Color color;
     Date year;
-    
-    vehiculo(){
+
+    public vehiculo() {
     }
 
     public vehiculo(int numero_placa, String marca, String modelo, String tipo, Color color, Date year) {
@@ -83,7 +84,5 @@ public class vehiculo {
     public String toString() {
         return "vehiculo{" + "numero_placa=" + numero_placa + ", marca=" + marca + ", modelo=" + modelo + ", tipo=" + tipo + ", color=" + color + ", year=" + year + '}';
     }
-    
-    
-    
+
 }
