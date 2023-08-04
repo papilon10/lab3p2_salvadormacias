@@ -37,7 +37,7 @@ public class Lab3p2_salvadormacias {
             opcion = lea.nextInt();
             if (opcion == 1) {
                 System.out.println("Ingrese el numero de placa: ");
-                int numero_placa = lea.nextInt();
+                String numero_placa = str.nextLine();
                 System.out.println("Ingrese la marca: ");
                 String marca = str.nextLine();
                 System.out.println("Ingrese el modelo: ");
@@ -69,7 +69,7 @@ public class Lab3p2_salvadormacias {
 
             } else if (opcion == 2) {
                 System.out.println("Ingrese el numero de placa: ");
-                int numero_placa = lea.nextInt();
+                String numero_placa = str.nextLine();
                 System.out.println("Ingrese la marca: ");
                 String marca = str.nextLine();
                 System.out.println("Ingrese el modelo: ");
@@ -86,13 +86,13 @@ public class Lab3p2_salvadormacias {
                 int velocidad_maxima = lea.nextInt();
                 System.out.println("Ingrese el peso: ");
                 double peso = lea.nextDouble();
-                System.out.println("Ingrese el tipo de combustible: ");
+                System.out.println("Ingrese el consumo de combustible: ");
                 int tipo_combustible = lea.nextInt();
                 vehiculos.add(new motocicleta(velocidad_maxima, peso, tipo_combustible));
 
             } else if (opcion == 3) {
                 System.out.println("Ingrese el numero de placa: ");
-                int numero_placa = lea.nextInt();
+                String numero_placa = str.nextLine();
                 System.out.println("Ingrese la marca: ");
                 String marca = str.nextLine();
                 System.out.println("Ingrese el modelo: ");
@@ -119,39 +119,30 @@ public class Lab3p2_salvadormacias {
 
             } else if (opcion == 6) {
                 System.out.println("---Automoviles---");
-                for (Object y : vehiculos) {
-                    if (y instanceof automovil) {
-                        vehiculo carro = (vehiculo) y;
-                        System.out.println(carro);
+
+                for (int i = 0; i < vehiculos.size(); i++) {
+                    if (vehiculos.get(i) instanceof automovil) {
+                        System.out.println(i + "." + (vehiculo) vehiculos.get(i));
                     }
-                    System.out.println(vehiculos.indexOf(y)
-                            + "-" + y);
-                    System.out.println("\n");
+                    System.out.println("\n\n");
 
                 }
                 System.out.println("---Motocicletas---");
-                for (Object y : vehiculos) {
-                    if (y instanceof motocicleta) {
-                        vehiculo moto = (vehiculo) y;
-                        System.out.println(moto);
+                for (int i = 0; i < vehiculos.size(); i++) {
+                    if (vehiculos.get(i) instanceof motocicleta) {
+                        System.out.println(i + "." + (vehiculo) vehiculos.get(i));
                     }
-                    System.out.println(vehiculos.indexOf(y)
-                            + "-" + y);
-                    System.out.println("\n");
+                    System.out.println("\n\n");
 
                 }
                 System.out.println("---Autobuses---");
-                for (Object y : vehiculos) {
-                    if (y instanceof autobus) {
-                        vehiculo bus = (vehiculo) y;
-                        System.out.println(bus);
+                for (int i = 0; i < vehiculos.size(); i++) {
+                    if (vehiculos.get(i) instanceof autobus) {
+                        System.out.println(i + "." + (vehiculo) vehiculos.get(i));
                     }
-                    System.out.println(vehiculos.indexOf(y)
-                            + "-" + y);
-                    System.out.println("\n");
+                    System.out.println("\n\n");
 
                 }
-                
 
             } else if (opcion == 7) {
 
@@ -159,5 +150,5 @@ public class Lab3p2_salvadormacias {
 
         }//fin while
 
-    }
+    }//fin main
 }//fin clase

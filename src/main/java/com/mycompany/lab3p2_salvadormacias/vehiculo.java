@@ -13,7 +13,7 @@ import java.util.Date;
  */
 public class vehiculo {
 
-    int numero_placa;
+    String numero_placa;
     String marca;
     String modelo;
     String tipo;
@@ -23,7 +23,7 @@ public class vehiculo {
     public vehiculo() {
     }
 
-    public vehiculo(int numero_placa, String marca, String modelo, String tipo, String color, Date year) {
+    public vehiculo(String numero_placa, String marca, String modelo, String tipo, String color, Date year) {
         this.numero_placa = numero_placa;
         this.marca = marca;
         this.modelo = modelo;
@@ -32,11 +32,11 @@ public class vehiculo {
         this.year = year;
     }
 
-    public int getNumero_placa() {
+    public String getNumero_placa() {
         return numero_placa;
     }
 
-    public void setNumero_placa(int numero_placa) {
+    public void setNumero_placa(String numero_placa) {
         this.numero_placa = numero_placa;
     }
 

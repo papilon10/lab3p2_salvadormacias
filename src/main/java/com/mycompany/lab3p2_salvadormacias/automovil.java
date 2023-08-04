@@ -62,11 +62,11 @@ public class automovil extends vehiculo {
         this.numero_asientos = numero_asientos;
     }
 
-    public int getNumero_placa() {
+    public String getNumero_placa() {
         return numero_placa;
     }
 
-    public void setNumero_placa(int numero_placa) {
+    public void setNumero_placa(String numero_placa) {
         this.numero_placa = numero_placa;
     }
 

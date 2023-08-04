@@ -18,7 +18,7 @@ public class autobus extends vehiculo {
     int numero_ejes;
     int longitud;
 
-    public autobus() {
+    public autobus(int capacidad_pasajeros1, int numero_ejes1, int longitud1, String numero_placa1, String marca1, String modelo1, String tipo1, String color1, LocalDate year1) {
     }
 
     public autobus(int capacidad_pasajeros, int numero_ejes, int longitud) {
@@ -28,7 +28,7 @@ public class autobus extends vehiculo {
         this.longitud = longitud;
     }
 
-    public autobus(int capacidad_pasajeros, int numero_ejes, int longitud, int numero_placa, String marca, String modelo, String tipo, String color, Date year) {
+    public autobus(int capacidad_pasajeros, int numero_ejes, int longitud, String numero_placa, String marca, String modelo, String tipo, String color, Date year) {
         super(numero_placa, marca, modelo, tipo, color, year);
         this.capacidad_pasajeros = capacidad_pasajeros;
         this.numero_ejes = numero_ejes;
@@ -63,11 +63,11 @@ public class autobus extends vehiculo {
         this.longitud = longitud;
     }
 
-    public int getNumero_placa() {
+    public String getNumero_placa() {
         return numero_placa;
     }
 
-    public void setNumero_placa(int numero_placa) {
+    public void setNumero_placa(String numero_placa) {
         this.numero_placa = numero_placa;
     }
 

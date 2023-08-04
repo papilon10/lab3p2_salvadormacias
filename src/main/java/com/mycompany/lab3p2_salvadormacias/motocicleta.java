@@ -51,11 +51,11 @@ public class motocicleta extends vehiculo {
         this.consumo_combustible = consumo_combustible;
     }
 
-    public int getNumero_placa() {
+    public String getNumero_placa() {
         return numero_placa;
     }
 
-    public void setNumero_placa(int numero_placa) {
+    public void setNumero_placa(String numero_placa) {
         this.numero_placa = numero_placa;
     }
 
