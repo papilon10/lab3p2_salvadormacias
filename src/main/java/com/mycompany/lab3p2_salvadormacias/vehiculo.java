@@ -17,13 +17,13 @@ public class vehiculo {
     String marca;
     String modelo;
     String tipo;
-    Color color;
+    String color;
     Date year;
 
     public vehiculo() {
     }
 
-    public vehiculo(int numero_placa, String marca, String modelo, String tipo, Color color, Date year) {
+    public vehiculo(int numero_placa, String marca, String modelo, String tipo, String color, Date year) {
         this.numero_placa = numero_placa;
         this.marca = marca;
         this.modelo = modelo;
@@ -64,11 +64,11 @@ public class vehiculo {
         this.tipo = tipo;
     }
 
-    public Color getColor() {
+    public String getColor() {
         return color;
     }
 
-    public void setColor(Color color) {
+    public void setColor(String color) {
         this.color = color;
     }
 

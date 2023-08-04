@@ -5,6 +5,7 @@
 package com.mycompany.lab3p2_salvadormacias;
 
 import java.awt.Color;
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -27,11 +28,15 @@ public class autobus extends vehiculo {
         this.longitud = longitud;
     }
 
-    public autobus(int capacidad_pasajeros, int numero_ejes, int longitud, int numero_placa, String marca, String modelo, String tipo, Color color, Date year) {
+    public autobus(int capacidad_pasajeros, int numero_ejes, int longitud, int numero_placa, String marca, String modelo, String tipo, String color, Date year) {
         super(numero_placa, marca, modelo, tipo, color, year);
         this.capacidad_pasajeros = capacidad_pasajeros;
         this.numero_ejes = numero_ejes;
         this.longitud = longitud;
+    }
+
+    autobus(int capacidad_pasajeros, int numero_ejes, int longitud, int numero_placa, String marca, String modelo, String tipo, String color, LocalDate year) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     public int getCapacidad_pasajeros() {
@@ -90,11 +95,11 @@ public class autobus extends vehiculo {
         this.tipo = tipo;
     }
 
-    public Color getColor() {
+    public String getColor() {
         return color;
     }
 
-    public void setColor(Color color) {
+    public void setColor(String color) {
         this.color = color;
     }
 
