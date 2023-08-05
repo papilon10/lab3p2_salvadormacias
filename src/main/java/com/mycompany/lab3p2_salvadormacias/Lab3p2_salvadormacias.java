@@ -32,8 +32,8 @@ public class Lab3p2_salvadormacias {
                     + "4.Modificar vehiculo\n"
                     + "5.Eliminar vehiculo\n"
                     + "6.Mostrar vehiculo\n"
-                    + "7Generar boletas\n."
-                    + "8.Salir");
+                    + "7.Generar boletas\n"
+                    + "8.Salir\n");
             opcion = lea.nextInt();
             if (opcion == 1) {
                 System.out.println("Ingrese el numero de placa: ");
@@ -252,6 +252,37 @@ public class Lab3p2_salvadormacias {
                 }
 
             } else if (opcion == 7) {
+                if (vehiculos.size() < 0) {
+                    System.out.println("El inventario de vehiculos esta vacio,no se puede generar una boleta");
+                } else {
+                    listarvehiculos();
+                    listarvehiculos2();
+                    listarvehiculos3();
+                    System.out.println("Ingrese la posicion del vehiculo al cual se le generara una boleta: ");
+                    int pos = lea.nextInt();
+                    if (pos > vehiculos.size()) {
+                        System.out.println("La posicion es invalida");
+                    } else {
+                        if (vehiculos.get(pos) instanceof automovil) {
+                            System.out.println("---Boleta de revision vehicular---");
+                            double tot_pagar = 275.0 + 250.0 + 1200.0;
+                            System.out.println("total a pagar: " + tot_pagar + " lps");
+
+                        } else if (vehiculos.get(pos) instanceof motocicleta) {
+                            System.out.println("---Boleta de revision vehicular---");
+                            double tot_pagar = 275.0 + 250.0 + 200.0;
+                            System.out.println("total a pagar: " + tot_pagar + " lps");
+
+                        } else if (vehiculos.get(pos) instanceof autobus) {
+                            System.out.println("---Boleta de revision vehicular---");
+                            double tot_pagar = 275.0 + 250.0 + 1000.0;
+                            System.out.println("total a pagar: " + tot_pagar + " lps");
+
+                        }
+
+                    }
+
+                }
 
             } else {
                 System.out.println("La opcion ingresada es invalida");
