@@ -13,6 +13,14 @@ import java.util.Date;
  */
 public class automovil extends vehiculo {
 
+    static void setTipoCombustible(String nuevoTipoCombustible) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    static void setTipoTransmision(String automatica) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     String tipo_combustible;
     int numero_puertas;
     String tipo_transmision;
@@ -114,5 +122,11 @@ public class automovil extends vehiculo {
     public String toString() {
         return "automovil{" + "tipo_combustible=" + tipo_combustible + ", numero_puertas=" + numero_puertas + ", tipo_transmision=" + tipo_transmision + ", numero_asientos=" + numero_asientos + '}';
     }
+
+    void setNumeroPuertas(int nuevoNumeroPuertas) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+
 
 }

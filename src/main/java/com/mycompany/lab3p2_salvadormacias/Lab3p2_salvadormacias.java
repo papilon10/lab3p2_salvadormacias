@@ -114,6 +114,96 @@ public class Lab3p2_salvadormacias {
                 vehiculos.add(new autobus(capacidad_pasajeros, numero_ejes, longitud, numero_placa, marca, modelo, tipo, color, year));
 
             } else if (opcion == 4) {
+                listarvehiculos();
+                listarvehiculos2();
+                listarvehiculos3();
+                System.out.println("Ingrese la posicion del vehiculo a modificar: ");
+                int pos = lea.nextInt();
+                if (vehiculos.size() > 0 && vehiculos.size() >= pos) {
+                    if (vehiculos.get(pos) instanceof automovil) {
+                        System.out.println("Ingrese el numero de placa: ");
+                        String numero_placa = str.nextLine();
+                        System.out.println("Ingrese la marca: ");
+                        String marca = str.nextLine();
+                        System.out.println("Ingrese el modelo: ");
+                        String modelo = str.nextLine();
+                        System.out.println("Ingrese el tipo: ");
+                        String tipo = str.nextLine();
+                        System.out.println("Ingrese el color: ");
+                        String color = str.nextLine();
+                        System.out.println("Ingrese el ano de creacion en formato \"dd/MM/yyyy\");\n");
+                        String fecha = str.nextLine();
+                        DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                        LocalDate year = LocalDate.parse(fecha, formatoFecha);
+                        System.out.println("Ingrese el tipo de combustible: ");
+                        String tipo_combustible = str.nextLine();
+                        System.out.println("Ingrese el numero de puertas: ");
+                        int numero_puertas = lea.nextInt();
+                        String tipo_transmision = "";
+                        System.out.println("Ingrese el tipo de trasmision [1.Automatica/2.Mecanica]: ");
+                        int x = lea.nextInt();
+                        if (x == 1) {
+                            tipo_transmision = "automatica";
+
+                        } else if (x == 2) {
+                            tipo_transmision = "mecanica";
+                        }
+                        System.out.println("Ingrese el numero de asientos: ");
+                        int numero_asientos = lea.nextInt();
+                        vehiculos.add(new automovil(tipo_combustible, numero_puertas, tipo_transmision, numero_asientos));
+
+                    } else if (vehiculos.get(pos) instanceof motocicleta) {
+                        System.out.println("Ingrese el numero de placa: ");
+                        String numero_placa = str.nextLine();
+                        System.out.println("Ingrese la marca: ");
+                        String marca = str.nextLine();
+                        System.out.println("Ingrese el modelo: ");
+                        String modelo = str.nextLine();
+                        System.out.println("Ingrese el tipo: ");
+                        String tipo = str.nextLine();
+                        System.out.println("Ingrese el color: ");
+                        String color = str.nextLine();
+                        System.out.println("Ingrese el ano de creacion en formato \"dd/MM/yyyy\");\n");
+                        String fecha = str.nextLine();
+                        DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                        LocalDate year = LocalDate.parse(fecha, formatoFecha);
+                        System.out.println("Ingrese la velocidad maxima: ");
+                        int velocidad_maxima = lea.nextInt();
+                        System.out.println("Ingrese el peso: ");
+                        double peso = lea.nextDouble();
+                        System.out.println("Ingrese el consumo de combustible: ");
+                        int tipo_combustible = lea.nextInt();
+                        vehiculos.add(new motocicleta(velocidad_maxima, peso, tipo_combustible));
+
+                    } else if (vehiculos.get(pos) instanceof autobus) {
+                        System.out.println("Ingrese el numero de placa: ");
+                        String numero_placa = str.nextLine();
+                        System.out.println("Ingrese la marca: ");
+                        String marca = str.nextLine();
+                        System.out.println("Ingrese el modelo: ");
+                        String modelo = str.nextLine();
+                        System.out.println("Ingrese el tipo: ");
+                        String tipo = str.nextLine();
+                        System.out.println("Ingrese el color: ");
+                        String color = str.nextLine();
+                        System.out.println("Ingrese el ano de creacion en formato \"dd/MM/yyyy\");\n");
+                        String fecha = str.nextLine();
+                        DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                        LocalDate year = LocalDate.parse(fecha, formatoFecha);
+                        System.out.println("Ingrese la capacidad de pasajeros: ");
+                        int capacidad_pasajeros = lea.nextInt();
+                        System.out.println("Ingrese el numero de ejes: ");
+                        int numero_ejes = lea.nextInt();
+                        System.out.println("Ingrese la longitud: ");
+                        int longitud = lea.nextInt();
+                        vehiculos.add(new autobus(capacidad_pasajeros, numero_ejes, longitud, numero_placa, marca, modelo, tipo, color, year));
+
+                    }
+
+                } else {
+                    System.out.println("La posicion ingresada esta fuera de rango o el inventario de vehiculos esta vacio");
+
+                }
 
             } else if (opcion == 5) {
                 listarvehiculos();
@@ -163,6 +253,8 @@ public class Lab3p2_salvadormacias {
 
             } else if (opcion == 7) {
 
+            } else {
+                System.out.println("La opcion ingresada es invalida");
             }
 
         }//fin while
