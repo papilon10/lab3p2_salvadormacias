@@ -11,6 +11,7 @@ package www.lab3p2_salvadormacias;
 public class Lab3p2_salvadormacias {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+    
+    
     }
 }
