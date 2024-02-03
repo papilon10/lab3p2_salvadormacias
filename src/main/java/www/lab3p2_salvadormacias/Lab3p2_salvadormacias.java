@@ -245,4 +245,47 @@ public class Lab3p2_salvadormacias {
         }
     }
     
+    private static void modificar_pokemon() {
+        if (lista_pokemon.isEmpty()) {
+            System.out.println("No hay pokemones disponibles a modificar.");
+            return;
+        }
+
+        System.out.println("Seleccione el tipo de Pokémon a modificar (1. fire, 2. water, 3. grass): ");
+        int typeOption = scanner.nextInt();
+        scanner.nextLine(); 
+
+        ArrayList<pokemon> lista_filtrada = new ArrayList<>();
+
+        switch (typeOption) {
+            case 1:
+                lista_filtrada = filtrar_lista(fire.class);
+                break;
+            case 2:
+                lista_filtrada = filtrar_lista(water.class);
+                break;
+            case 3:
+                lista_filtrada = filtrar_lista(grass.class);
+                break;
+            default:
+                System.out.println("Opción no válida.");
+        }
+
+        if (!lista_filtrada.isEmpty()) {
+            System.out.println("Seleccione el indice del pokemon a modificar:");
+            for (int i = 0; i < lista_filtrada.size(); i++) {
+                System.out.println(i + ". " + lista_filtrada.get(i).nombre);
+            }
+
+            int indexToModify = scanner.nextInt();
+            if (indexToModify >= 0 && indexToModify < lista_filtrada.size()) {
+                modificar_atributos(lista_filtrada.get(indexToModify));
+            } else {
+                System.out.println("el indice es invalido.");
+            }
+        } else {
+            System.out.println("no hay pokemons de este tipo a modificar");
+        }
+    }
+    
 }//fin clase
