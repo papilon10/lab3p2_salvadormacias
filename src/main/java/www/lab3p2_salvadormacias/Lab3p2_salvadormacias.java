@@ -209,4 +209,40 @@ public class Lab3p2_salvadormacias {
             System.out.println("la opcion ingresada es invalida.");
         }
     }
+    
+    private static ArrayList<pokemon> pokemones_encontrados() {
+        ArrayList<pokemon> availablePokemons = new ArrayList<>();
+        for (pokemon pokemon : lista_pokemon) {
+            if (!pokemon.atrapado) {
+                availablePokemons.add(pokemon);
+            }
+        }
+        return availablePokemons;
+    }
+
+    private static void intento_captura(pokeball pokeball, pokemon pokemon) {
+        double chance = 0.0;
+
+        switch (pokeball.eficencia) {
+            case 1:
+                chance = 1.0 / 3.0;
+                break;
+            case 2:
+                chance = 2.0 / 3.0;
+                break;
+            case 3:
+                chance = 1.0;
+                break;
+        }
+
+        if (random.nextDouble() <= chance) {
+            pokemon.atrapado = true;
+            lista_pokeball.remove(pokeball);
+            System.out.println("¡se ha capturado a" + pokemon.nombre + " exitosamente!!!!");
+        } else {
+            lista_pokeball.remove(pokeball);
+            System.out.println("No se ha podido capturar a " + pokemon.nombre + "");
+        }
+    }
+    
 }//fin clase
