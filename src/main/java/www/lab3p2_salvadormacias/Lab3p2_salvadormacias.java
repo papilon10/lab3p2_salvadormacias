@@ -122,6 +122,43 @@ public class Lab3p2_salvadormacias {
         }
     }//fin listar pokemones
 
-   
+   private static void eliminar_pokemon() {
+        System.out.println("Elija el tipo de Pokémon a eliminar (1. Fire-Type, 2. Water-Type, 3. Grass-Type): ");
+        int typeOption = scanner.nextInt();
+        scanner.nextLine();
+
+        ArrayList<pokemon> filteredList = new ArrayList<>();
+
+        switch (typeOption) {
+            case 1:
+                filteredList = filtrar_lista(fire.class);
+                break;
+            case 2:
+                filteredList = filtrar_lista(water.class);
+                break;
+            case 3:
+                filteredList = filtrar_lista(grass.class);
+                break;
+            default:
+                System.out.println("Opción no válida.");
+        }
+
+        if (!filteredList.isEmpty()) {
+            System.out.println("seleccione el indice del pokemon que sera eliminado:");
+            for (int i = 0; i < filteredList.size(); i++) {
+                System.out.println(i + ". " + filteredList.get(i).nombre);
+            }
+
+            int indexToDelete = scanner.nextInt();
+            if (indexToDelete >= 0 && indexToDelete < filteredList.size()) {
+                lista_pokemon.remove(filteredList.get(indexToDelete));
+                System.out.println("Pokémon eliminado exitosamente.");
+            } else {
+                System.out.println("Índice no válido.");
+            }
+        } else {
+            System.out.println("No hay Pokémon de ese tipo para eliminar.");
+        }
+    }//fin eliminar pokemon
 
 }//fin clase
