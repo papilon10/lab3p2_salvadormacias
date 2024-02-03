@@ -122,7 +122,7 @@ public class Lab3p2_salvadormacias {
         }
     }//fin listar pokemones
 
-   private static void eliminar_pokemon() {
+    private static void eliminar_pokemon() {
         System.out.println("Elija el tipo de Pokémon a eliminar (1. Fire-Type, 2. Water-Type, 3. Grass-Type): ");
         int typeOption = scanner.nextInt();
         scanner.nextLine();
@@ -161,4 +161,52 @@ public class Lab3p2_salvadormacias {
         }
     }//fin eliminar pokemon
 
+    private static ArrayList<pokemon> filtrar_lista(Class<?> type) {
+        ArrayList<pokemon> filtro = new ArrayList<>();
+        for (pokemon pokemon : lista_pokemon) {
+            if (type.isInstance(pokemon)) {
+                filtro.add(pokemon);
+            }
+        }
+        return filtro;
+    }
+
+    private static void capturar() {
+        if (lista_pokeball.isEmpty() || lista_pokemon.isEmpty()) {
+            System.out.println("No hay suficientes Pokebolas o Pokémon para realizar la captura.");
+            return;
+        }
+
+        System.out.println("Seleccione la pokebola:");
+        for (int i = 0; i < lista_pokeball.size(); i++) {
+            System.out.println(i + ". " + lista_pokeball.get(i).color);
+        }
+
+        int selectedPokeballIndex = scanner.nextInt();
+        if (selectedPokeballIndex < 0 || selectedPokeballIndex >= lista_pokeball.size()) {
+            System.out.println("indice ingresado es invalido.");
+            return;
+        }
+
+        pokeball seleccionada = lista_pokeball.get(selectedPokeballIndex);
+
+        ArrayList<pokemon> pokemones_disponibles = pokemones_encontrados();
+        if (pokemones_disponibles.isEmpty()) {
+            System.out.println("No hay Pokémon disponibles para capturar en este momento.");
+            return;
+        }
+
+        pokemon capturado = pokemones_disponibles.get(random.nextInt(pokemones_disponibles.size()));
+        System.out.println("el pokemon " + capturado.nombre + " se ha aparecido!!!!");
+
+        System.out.println("¿Desea intentar capturarlo o huir? [1.capturar/2.huir]: ");
+        int captura_opc = scanner.nextInt();
+        if (captura_opc == 1) {
+            intento_captura(seleccionada, capturado);
+        } else if (captura_opc == 2) {
+            System.out.println("Ha huido del encuentro.");
+        } else {
+            System.out.println("la opcion ingresada es invalida.");
+        }
+    }
 }//fin clase
